@@ -12,7 +12,7 @@ def compute_sieve(s):
     k = int(math.sqrt(len(s)))
     for i in range(3, k, 2):
         if s[i]:
-            j = i + i
+            j = i * i
             while j < len(s):
                 s[j] = False
                 j = j + i
