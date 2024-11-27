@@ -1,19 +1,6 @@
-import sys
+import inout as io
 
-def main():
-    try:
-        if len(sys.argv) == 1:
-            n = int(input('Podaj liczbę: '))
-        elif len(sys.argv) == 2:
-            n = int(sys.argv[1])
-        else:
-            print('Niepoprawna liczba argumentów')
-            return
-        if (n <= 0): raise ValueError
-    except ValueError:
-        print('Niepoprawny format argumentu')
-        return
-
+def prime(n):
     primes = [2]
     suspected = 3
 
@@ -28,16 +15,27 @@ def main():
             primes.append(suspected)
         suspected += 2
 
+    return primes[-1]
+
+
+def write(n, ans):
     if n%10==1:
-        print(f'{n}-sza liczba pierwsza: {primes[-1]}')
+        print(f'{n}-sza liczba pierwsza: {ans}')
     elif n%10==2:
-        print(f'{n}-ga liczba pierwsza: {primes[-1]}')
+        print(f'{n}-ga liczba pierwsza: {ans}')
     elif n%10==3:
-        print(f'{n}-cia liczba pierwsza: {primes[-1]}')
+        print(f'{n}-cia liczba pierwsza: {ans}')
     elif n%100==0:
-        print(f'{n}-na liczba pierwsza: {primes[-1]}')
+        print(f'{n}-na liczba pierwsza: {ans}')
     else:
-        print(f'{n}-sza liczba pierwsza: {primes[-1]}')
+        print(f'{n}-sza liczba pierwsza: {ans}')
+
+
+def main():
+    n, = io.get_input(int)
+    ans = prime(n)
+
+    write(n, ans)
 
     
 if __name__ == '__main__':

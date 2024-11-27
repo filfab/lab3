@@ -11,7 +11,7 @@ void compute_sieve(bool s[], unsigned n) {
 
     for (i=3; i<=k; i+=2) {
         if (s[i]) {
-            for (j=i*2; j<=n; j+=i) {
+            for (j=i*i; j<=n; j+=i) {
                 s[j] = false;
             }
         }

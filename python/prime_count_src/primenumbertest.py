@@ -1,5 +1,5 @@
 import prime_count_src.primenumbers as pp
-import prime_count_src.inout as io
+import inout as io
 
 def main():
     n, = io.get_input(int)

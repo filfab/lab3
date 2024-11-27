@@ -12,7 +12,7 @@ package body PrimeNumbers is
         i := 3;
         while i <= k loop
             if s(i) then
-                j := i + i;
+                j := i * i;
                 while j <= s'Last loop
                     s(j) := False;
                     j := j + i;
