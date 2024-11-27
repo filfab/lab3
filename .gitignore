@@ -1,4 +1,7 @@
-*/__pycache__
-*/bin
+.gitignore
+**/__pycache__/
+**/bin/
 *.sh
 *.out
+*.ali
+*.o
